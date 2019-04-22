@@ -5,8 +5,8 @@ RUN apk update && apk add --no-cache bash nginx php7-fpm php7-cli php7-common ph
     && apk add --no-cache --virtual build-dependencies wget unzip \
     && git clone https://github.com/phpvirtualbox/phpvirtualbox.git \
     && mkdir -p /var/www \
-    && mv -v phpvirtualbox/* /var/www/ \
-    && rm phpvirtualbox/ -R \
+    && mv phpvirtualbox/* /var/www/ \
+    && rm -R phpvirtualbox/ \
     && apk del build-dependencies \
     && echo "<?php return array(); ?>" > /var/www/config-servers.php \
     && echo "<?php return array(); ?>" > /var/www/config-override.php \
