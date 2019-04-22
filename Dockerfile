@@ -13,7 +13,7 @@ RUN apk update && apk add --no-cache bash nginx php7-fpm php7-cli php7-common ph
     && chown nobody:nobody -R /var/www
 
 # config files
-#COPY config.php /var/www/config.php
+COPY config.php /var/www/config.php
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY servers-from-env.php /servers-from-env.php
 
